@@ -53,9 +53,11 @@ namespace TestProject.General
 
         private void AnimateScale(Button button, Action onComplete)
         {
+            button.interactable = false;
             button.transform.DOScale(Vector3.one * .7f, DURATION_ANIM_BTN).SetEase(_animationEaseButton)
                 .OnComplete(() =>
-                    button.transform.DOScale(Vector3.one, DURATION_ANIM_BTN).SetEase(_animationEaseButton).OnComplete(() => onComplete.Invoke()));
+                    button.transform.DOScale(Vector3.one, DURATION_ANIM_BTN).SetEase(_animationEaseButton).OnComplete(() => 
+                    { onComplete.Invoke(); button.interactable = true; }));
         }
     }
 }
