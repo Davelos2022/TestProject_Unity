@@ -41,7 +41,7 @@ namespace TestProject.Data
             }
         }
 
-        private static bool StringIsValid(string nameFile)
+        private bool StringIsValid(string nameFile)
         {
             return !string.IsNullOrWhiteSpace(nameFile) && !Regex.IsMatch(nameFile, @"[^a-zA-z\d_]");
         }

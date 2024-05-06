@@ -13,6 +13,7 @@ namespace TestProject.General
         public const string ERROR_LOAD_JSON = "JSON file not found in Resources folder fileName:";
         public const string ERROR_NAME_FILE = "The file name is missing or there are invalid characters";
         public const string INVALID_JSON = "Invalid JSON";
+        public const string NOT_FIND_VALUE = "The requested range was not found in the currently loaded file";
         #endregion
     }
 }

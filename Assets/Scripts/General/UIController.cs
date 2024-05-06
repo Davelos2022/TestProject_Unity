@@ -51,8 +51,16 @@ namespace TestProject.General
         {
             if (_selectedRowIndex.HasValue && _selectedColumnIndex.HasValue)
             {
-                string result = _dataController.Model.Data[_selectedRowIndex.Value, _selectedColumnIndex.Value].ToString();
-                _view.SetDisplayText(result);
+                if (_dataController.TryGetValue(_selectedRowIndex.Value, _selectedColumnIndex.Value))
+                {
+                    string result = _dataController.Model.Data[_selectedRowIndex.Value, _selectedColumnIndex.Value].ToString();
+                    _view.SetDisplayText(result);
+                }
+                else
+                {
+                    _view.SetDisplayText(TextMessages.NOT_FIND_VALUE);
+                }
+
                 ResetSelection();
             }
         }

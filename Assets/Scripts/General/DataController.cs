@@ -1,5 +1,6 @@
 using UnityEngine;
 using TestProject.Data;
+using TestProject.Static;
 
 namespace TestProject.General
 {
@@ -29,6 +30,11 @@ namespace TestProject.General
         {
             _model.LoadData(_dataLoader, _optimizeNameFile);
             return _model.Data != null;
+        }
+
+        public bool TryGetValue(int rowIndex, int colIndex)
+        {
+            return _model.Data.IsValidIndex(rowIndex, colIndex);
         }
     }
 }
