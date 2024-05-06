@@ -13,7 +13,7 @@ namespace TestProject.Data
 
         public int[,] LoadData(string nameFile)
         {
-            if (string.IsNullOrWhiteSpace(nameFile) || !StringIsValid(nameFile))
+            if (!StringIsValid(nameFile))
             {
                 Debug.LogError($"{TextMessages.ERROR_NAME_FILE} {nameFile}");
                 return null;
@@ -43,7 +43,7 @@ namespace TestProject.Data
 
         private static bool StringIsValid(string nameFile)
         {
-            return !string.IsNullOrEmpty(nameFile) && !Regex.IsMatch(nameFile, @"[^a-zA-z\d_]");
+            return !string.IsNullOrWhiteSpace(nameFile) && !Regex.IsMatch(nameFile, @"[^a-zA-z\d_]");
         }
     }
 }

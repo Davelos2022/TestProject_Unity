@@ -42,12 +42,12 @@ namespace TestProject.General
                 case SelectionState.RowSelected:
                     _selectedColumnIndex = index;
                     _selectionState = SelectionState.BothSelected;
-                    DisplayData();
+                    ShowValue();
                     break;
             }
         }
 
-        private void DisplayData()
+        private void ShowValue()
         {
             if (_selectedRowIndex.HasValue && _selectedColumnIndex.HasValue)
             {

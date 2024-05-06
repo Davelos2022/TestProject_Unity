@@ -1,4 +1,7 @@
-public interface IDataLoader
+namespace TestProject.Data
 {
-    int[,] LoadData(string nameFile);
+    public interface IDataLoader
+    {
+        int[,] LoadData(string nameFile);
+    }
 }
